@@ -2,3 +2,18 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+@for $index from 1 through 5 {
+    @each $prop, $abbrev in (margin: m, padding: p) {
+        .#{$abbrev}-#{$index} {
+            #{$prop}: $index * 5px;
+        }
+        @each $dir, $dirAbbrev in (top:t, bottom: b, right: r, left: l) {
+            .#{$abbrev}#{$dirAbbrev}-#{$index} {
+                #{$prop}-#{$dir}: $index * 5px;
+            }
+        }
+    }
+}
+
