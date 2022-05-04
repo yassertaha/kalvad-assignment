@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BooksModule } from './books/books.module';
 import { LayoutModule } from './layout/layout.module';
 
 @NgModule({
@@ -14,6 +15,7 @@ import { LayoutModule } from './layout/layout.module';
     BrowserModule,
     BrowserAnimationsModule,
     LayoutModule,
+    BooksModule,
     AppRoutingModule
   ],
   providers: [],

@@ -1,0 +1,17 @@
+<div class="book-list-container">
+    <mat-card class="book-card" *ngFor="let book of books$ | async">
+      <mat-card-title-group>
+        <mat-card-title>{{ book.name }}</mat-card-title>
+        <mat-card-subtitle>
+          Author: {{ book.author }}
+          <br />
+          Year: {{ book.year }}
+        </mat-card-subtitle>
+        <img mat-card-sm-image src="assets/images/book.jpeg" />
+      </mat-card-title-group>
+      <mat-card-content> </mat-card-content>
+    </mat-card>
+  <button class="add-button" type="button" mat-stroked-button color="primary">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
