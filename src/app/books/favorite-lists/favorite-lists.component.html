@@ -1,0 +1,17 @@
+<mat-card *ngIf="favoriteBookList$ | async  as lists">
+    <mat-card-title-group>
+    <mat-card-title>All lists</mat-card-title>
+    </mat-card-title-group>
+    <mat-card-content >
+        <div class="favorite-list-container" *ngIf="lists?.length">
+            <div class="favorite-list-item" *ngFor="let list of lists"> 
+                {{list.name}} 
+                <button class="delete-btn" (click)="deleteList(list.id)" type="button" mat-icon-button color="warn">
+                    <mat-icon>
+                        close
+                    </mat-icon>
+                </button>
+            </div>
+        </div>
+    </mat-card-content>
+  </mat-card>

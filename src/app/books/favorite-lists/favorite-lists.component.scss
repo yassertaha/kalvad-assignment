@@ -1,0 +1,14 @@
+.favorite-list-container {
+    width: 100%;
+    max-width: 500px;
+    border: solid 1px #ccc;
+    border-radius: 4px;
+    .favorite-list-item {
+        font-size: 14px;
+        padding: 20px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: solid 1px #ccc;
+    }
+}

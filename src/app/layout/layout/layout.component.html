@@ -10,6 +10,7 @@
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="allBooks">All Books</a>
+      <a mat-list-item routerLink="allFavoriteList">All favorite lists</a>
       <a
         mat-list-item
         *ngFor="let list of favoriteLists$ | async"

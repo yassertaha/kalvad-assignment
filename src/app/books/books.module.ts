@@ -11,11 +11,12 @@ import { FavoriteBookListComponent } from './favorite-book-list/favorite-book-li
 import { FavoriteBookMenuComponent } from './favorite-book-menu/favorite-book-menu.component';
 import { FormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { FavoriteListsComponent } from './favorite-lists/favorite-lists.component';
 
 
 
 @NgModule({
-  declarations: [BookListComponent, FavoriteBookListComponent, FavoriteBookMenuComponent],
+  declarations: [BookListComponent, FavoriteBookListComponent, FavoriteBookMenuComponent, FavoriteListsComponent],
   imports: [
     CommonModule,
     MatCardModule,
