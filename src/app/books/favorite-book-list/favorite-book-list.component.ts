@@ -30,6 +30,10 @@ export class FavoriteBookListComponent implements OnInit, OnDestroy {
     this.favoriteBookService.switchBooks(list.id, event.previousIndex, event.currentIndex)
   }
 
+  deleteBook(id: number, bookId: number) {
+    this.favoriteBookService.deleteBookFromList(id, bookId);
+  }
+
   ngOnDestroy(): void {
     this.destroyed.next();
     this.destroyed.complete();

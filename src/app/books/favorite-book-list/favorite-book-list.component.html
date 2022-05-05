@@ -6,7 +6,7 @@
             <div cdkDropList class="book-list" (cdkDropListDropped)="switchBooks(list, $event)">
                 <div class="book-item" *ngFor="let book of list?.books" cdkDrag> 
                     {{book.name}} 
-                    <button class="delete-btn" type="button" mat-icon-button color="warn">
+                    <button class="delete-btn" (click)="deleteBook(list.id, book.id)" type="button" mat-icon-button color="warn">
                         <mat-icon>
                             close
                         </mat-icon>

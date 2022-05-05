@@ -39,13 +39,30 @@ export class FavoriteBookService {
     this.favoriteBookSubject.next([...this.favoriteLists]);
   }
 
+  deleteBookFromList(id: number, bookId: number) {
+    let list = this.getFavoriteListById(id);
+    if (list == undefined) return;
+    let index = this.favoriteLists.indexOf(list);
+
+    let books= [...list.books];
+    let book = books.find(b => b.id === bookId)
+    if (book == undefined)
+      return;
+    books.splice(books.indexOf(book), 1);
+    list = {...list, books: books}
+    this.favoriteLists[index] = list;
+    this.favoriteBookSubject.next([...this.favoriteLists]);
+  }
+
   switchBooks(id: number, previousIndex: number, currentIndex: number) {
     let list = this.getFavoriteListById(id);
     if (list == undefined) return;
+    let index = this.favoriteLists.indexOf(list);
 
     let books = [...list.books];
-    moveItemInArray(list.books, previousIndex, currentIndex);
+    moveItemInArray(books, previousIndex, currentIndex);
     list = {...list, books: books}
+    this.favoriteLists[index] = list;
     this.favoriteBookSubject.next([...this.favoriteLists]);
   }
 
