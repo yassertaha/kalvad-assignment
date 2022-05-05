@@ -9,7 +9,10 @@
         </mat-card-subtitle>
         <img mat-card-sm-image src="assets/images/book.jpeg" />
       </mat-card-title-group>
-      <mat-card-content> </mat-card-content>
+      <mat-card-footer>
+          <app-favorite-book-menu [book]="book"></app-favorite-book-menu>
+      </mat-card-footer>
+      <mat-card-content > </mat-card-content>
     </mat-card>
   <button class="add-button" type="button" mat-stroked-button color="primary">
     <mat-icon>add</mat-icon>

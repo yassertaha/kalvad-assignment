@@ -1,0 +1,29 @@
+<button mat-icon-button [matMenuTriggerFor]="menu">
+  <mat-icon> favorite </mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <div class="m-3" (click)="$event.stopImmediatePropagation()">
+    <input
+      matInput
+      ngModel
+      type="text"
+      name="name"
+      placeholder="New favorite list name"
+      required
+      #name="ngModel"
+    />
+
+    <button mat-icon-button [disabled]="name.hasError('required')" (click)="addList(name)">
+        <mat-icon> add </mat-icon>
+      </button>
+  </div>
+
+  <button
+    *ngFor="let list of favoriteBookLists$ | async"
+    mat-menu-item
+    [disabled]="bookAlreadyAdded(list)"
+    (click)="addBookToList(list.id)"
+  >
+    {{ list.name }}
+  </button>
+</mat-menu>

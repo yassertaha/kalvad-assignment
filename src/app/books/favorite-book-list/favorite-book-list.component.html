@@ -1,0 +1,5 @@
+<div class="m-2">
+    <mat-list>
+        <mat-list-item *ngFor="let book of (favoriteBookList$ | async)?.books"> {{book.name}} </mat-list-item>
+    </mat-list>
+</div>
