@@ -1,3 +1,4 @@
+import { moveItemInArray } from '@angular/cdk/drag-drop';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, filter, map } from 'rxjs';
 import { Book } from 'src/types/book.interface';
@@ -35,6 +36,16 @@ export class FavoriteBookService {
     let list = this.getFavoriteListById(id);
     if (list == undefined) return;
     this.favoriteLists.splice(this.favoriteLists.indexOf(list), 1);
+    this.favoriteBookSubject.next([...this.favoriteLists]);
+  }
+
+  switchBooks(id: number, previousIndex: number, currentIndex: number) {
+    let list = this.getFavoriteListById(id);
+    if (list == undefined) return;
+
+    let books = [...list.books];
+    moveItemInArray(list.books, previousIndex, currentIndex);
+    list = {...list, books: books}
     this.favoriteBookSubject.next([...this.favoriteLists]);
   }
 

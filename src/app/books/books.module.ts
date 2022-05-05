@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FavoriteBookListComponent } from './favorite-book-list/favorite-book-list.component';
 import { FavoriteBookMenuComponent } from './favorite-book-menu/favorite-book-menu.component';
 import { FormsModule } from '@angular/forms';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 
 
@@ -23,6 +24,7 @@ import { FormsModule } from '@angular/forms';
     MatMenuModule,
     MatInputModule,
     MatListModule,
+    DragDropModule,
     FormsModule
   ]
 })

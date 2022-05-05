@@ -1,5 +1,18 @@
-<div class="m-2">
-    <mat-list>
-        <mat-list-item *ngFor="let book of (favoriteBookList$ | async)?.books"> {{book.name}} </mat-list-item>
-    </mat-list>
-</div>
+    <mat-card *ngIf="favoriteBookList$ | async  as list">
+        <mat-card-title-group>
+        <mat-card-title>Favorite books: {{ list.name }}</mat-card-title>
+        </mat-card-title-group>
+        <mat-card-content >
+            <div cdkDropList class="book-list" (cdkDropListDropped)="switchBooks(list, $event)">
+                <div class="book-item" *ngFor="let book of list?.books" cdkDrag> 
+                    {{book.name}} 
+                    <button class="delete-btn" type="button" mat-icon-button color="warn">
+                        <mat-icon>
+                            close
+                        </mat-icon>
+                    </button>
+                </div>
+            </div>
+        </mat-card-content>
+      </mat-card>
+    
